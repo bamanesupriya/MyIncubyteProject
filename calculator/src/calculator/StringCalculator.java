@@ -1,6 +1,4 @@
 
-
-
 package calculator;
 
 class StringCalculator {
@@ -56,7 +54,4 @@ class StringCalculator {
     private int stringToInt(String input) {
     	return Integer.parseInt(input);
     }
-    
-    
-
 }

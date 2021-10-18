@@ -24,9 +24,10 @@ class TestCalculate {
     void emptyStringReturns0() {
         
     	try {
-			assertEquals(calculator.add(""),0);
+    		StringCalculator stringCalculator = new StringCalculator();
+			assertEquals(0, stringCalculator.add(""));
+			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     }
@@ -35,9 +36,10 @@ class TestCalculate {
     void stringSingleNumberReturnNumber() {
         
         try {
-			assertEquals(calculator.add("1"),1);
+        	StringCalculator stringCalculator = new StringCalculator();
+			assertEquals(1, stringCalculator.add("1"));
+			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     }
@@ -46,9 +48,11 @@ class TestCalculate {
     public void twoNumbersCommaDelimitedReturnSum() {
     	
     	try {
-			assertEquals(calculator.add("1,2"),3);
+			//assertEquals(calculator.add("1,2"),3);
+    		StringCalculator stringCalculator = new StringCalculator();
+			assertEquals(3, stringCalculator.add("1,2"));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
     }
@@ -56,13 +60,13 @@ class TestCalculate {
     public void twoNumbersNewLineDelimitedReturnSum() throws Exception {
     	StringCalculator stringCalculator = new StringCalculator();
     	assertEquals(3, stringCalculator.add("1\n2"));
-    	//assertEquals(calculator.add("1\n2"),3);
+    	
     }
     @Test
     public void threeNumbersDelimitedBothWaysReturnSum() throws Exception {
     	StringCalculator stringCalculator = new StringCalculator();
     	assertEquals(6, stringCalculator.add("1,2,3"));
-    	//assertEquals(calculator.add("1,2,3"),6);
+    	
     }
     @Test 
     public void negativeInputReturnsException() {
